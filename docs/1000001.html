@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>沈黙の翼 - As Asas do Silêncio - NFT do Livro</title>
+    <meta
+      name="description"
+      content="As Asas do Silêncio - NFT do Livro - Entre espadas e silêncios, nasce uma fábula samurai como você nunca viu. Combina narrativa épica, arte autoral e filosofia oriental em uma jornada onde cada página corta como lâmina e cada pausa ecoa como ensinamento."
+    />
+    <meta name="author" content="Bruno Kaze" />
+    <meta
+      name="keywords"
+      content="NFT, Samurai, Literatura Zen, Humanidades, Aventura, ERC-1155, Blockchain, Bruno Kaze"
+    />
+
+    <meta property="og:title" content="沈黙の翼 - As Asas do Silêncio - NFT" />
+    <meta
+      property="og:description"
+      content="Entre espadas e silêncios, nasce uma fábula samurai como você nunca viu. Aventura épica, espiritualidade oriental e estética poética singular."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://novatrixtech.github.io/asasdosilencio/capalivro.png" />
+    <meta property="og:url" content="https://novatrixtech.github.io/asasdosilencio/" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="沈黙の翼 - As Asas do Silêncio - NFT" />
+    <meta
+      name="twitter:description"
+      content="Entre espadas e silêncios, nasce uma fábula samurai como você nunca viu. Aventura épica, espiritualidade oriental e estética poética singular."
+    />
+    <meta name="twitter:image" content="https://novatrixtech.github.io/asasdosilencio/capalivro.png" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+
+    <!-- Bootstrap 3 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+
+    <!-- Google Fonts - Japanese-inspired typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --ink-black: #1a1a1a;
+        --washi-cream: #f5f0e6;
+        --sumi-gray: #3d3d3d;
+        --bamboo-green: #4a5d23;
+        --vermillion: #c73e3a;
+        --gold-accent: #c9a959;
+        --paper-shadow: #d4cfc4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--ink-black);
+        background-image: radial-gradient(ellipse at top, rgba(74, 93, 35, 0.15) 0%, transparent 50%),
+          radial-gradient(ellipse at bottom, rgba(199, 62, 58, 0.1) 0%, transparent 50%);
+        min-height: 100vh;
+        padding: 0;
+        margin: 0;
+        font-family: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+      }
+
+      /* Japanese-style decorative border frame */
+      .frame-container {
+        min-height: 100vh;
+        padding: 20px;
+        position: relative;
+      }
+
+      .frame-container::before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border: 1px solid var(--gold-accent);
+        opacity: 0.4;
+        pointer-events: none;
+      }
+
+      .frame-container::after {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+        border: 2px solid var(--gold-accent);
+        opacity: 0.2;
+        pointer-events: none;
+      }
+
+      .main-content {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      /* Japanese title styling */
+      .japanese-title {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .kanji-title {
+        font-family: "Noto Serif JP", serif;
+        font-size: 3em;
+        font-weight: 700;
+        color: var(--washi-cream);
+        letter-spacing: 0.3em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin: 0;
+      }
+
+      .romaji-title {
+        font-family: "Cinzel", serif;
+        font-size: 1.2em;
+        font-weight: 400;
+        color: var(--gold-accent);
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        margin-top: 8px;
+        opacity: 0.9;
+      }
+
+      /* Decorative mon (family crest) divider */
+      .mon-divider {
+        text-align: center;
+        margin: 25px 0;
+        position: relative;
+      }
+
+      .mon-divider::before,
+      .mon-divider::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 30%;
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--gold-accent), transparent);
+      }
+
+      .mon-divider::before {
+        left: 5%;
+      }
+
+      .mon-divider::after {
+        right: 5%;
+      }
+
+      .mon-symbol {
+        display: inline-block;
+        font-size: 1.5em;
+        color: var(--vermillion);
+        opacity: 0.8;
+      }
+
+      /* NFT certificate heading */
+      .nft-certificate {
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+
+      .certificate-text {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.1em;
+        font-weight: 500;
+        color: var(--washi-cream);
+        line-height: 1.8;
+        max-width: 700px;
+        margin: 0 auto;
+        opacity: 0.9;
+      }
+
+      .certificate-text .highlight {
+        color: var(--gold-accent);
+        font-weight: 600;
+      }
+
+      /* Book cover container - washi paper effect */
+      .book-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0;
+        padding: 30px;
+        position: relative;
+      }
+
+      .book-wrapper {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* Washi paper texture background for book */
+      .book-wrapper::before {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        right: -15px;
+        bottom: -15px;
+        background: linear-gradient(135deg, var(--washi-cream) 0%, var(--paper-shadow) 100%);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 80px rgba(201, 169, 89, 0.15), inset 0 0 30px rgba(0, 0, 0, 0.1);
+        z-index: -1;
+      }
+
+      .book-cover {
+        max-width: 100%;
+        height: auto;
+        max-height: 65vh;
+        display: block;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4), -2px -2px 10px rgba(255, 255, 255, 0.1);
+      }
+
+      /* Story synopsis - scroll-like styling */
+      .synopsis-container {
+        background: linear-gradient(
+          to bottom,
+          rgba(245, 240, 230, 0.03) 0%,
+          rgba(245, 240, 230, 0.08) 50%,
+          rgba(245, 240, 230, 0.03) 100%
+        );
+        border-top: 1px solid rgba(201, 169, 89, 0.3);
+        border-bottom: 1px solid rgba(201, 169, 89, 0.3);
+        padding: 40px 30px;
+        margin: 40px 0;
+        position: relative;
+      }
+
+      .synopsis-container::before,
+      .synopsis-container::after {
+        content: "◆";
+        position: absolute;
+        color: var(--gold-accent);
+        opacity: 0.5;
+        font-size: 0.8em;
+      }
+
+      .synopsis-container::before {
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .synopsis-container::after {
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .synopsis {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.25em;
+        font-weight: 400;
+        color: var(--washi-cream);
+        line-height: 2;
+        text-align: justify;
+        max-width: 750px;
+        margin: 0 auto;
+        text-indent: 2em;
+      }
+
+      .synopsis .first-letter {
+        font-size: 2.5em;
+        font-weight: 600;
+        color: var(--vermillion);
+        float: left;
+        line-height: 1;
+        margin-right: 8px;
+        margin-top: 5px;
+        font-family: "Noto Serif JP", serif;
+      }
+
+      /* Author credit - seal style */
+      .author-seal {
+        text-align: center;
+        margin: 40px 0 20px;
+      }
+
+      .author-name {
+        display: inline-block;
+        font-family: "Cinzel", serif;
+        font-size: 1em;
+        font-weight: 600;
+        color: var(--washi-cream);
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        padding: 10px 30px;
+        border: 1px solid var(--vermillion);
+        position: relative;
+      }
+
+      .author-name::before {
+        content: "著";
+        position: absolute;
+        right: -40px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: "Noto Serif JP", serif;
+        font-size: 1.8em;
+        color: var(--vermillion);
+        opacity: 0.7;
+      }
+
+      /* Keywords - brushstroke style */
+      .keywords-container {
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .keywords {
+        display: inline-block;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 0.95em;
+        font-style: italic;
+        color: rgba(245, 240, 230, 0.6);
+        letter-spacing: 0.1em;
+      }
+
+      .keywords span {
+        display: inline-block;
+        margin: 0 8px;
+        padding: 3px 12px;
+        border-bottom: 1px solid rgba(201, 169, 89, 0.3);
+      }
+
+      /* Volume indicator */
+      .volume-badge {
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      .volume-text {
+        display: inline-block;
+        font-family: "Noto Serif JP", serif;
+        font-size: 0.9em;
+        color: var(--gold-accent);
+        padding: 8px 25px;
+        border: 1px solid var(--gold-accent);
+        opacity: 0.8;
+        letter-spacing: 0.2em;
+      }
+
+      /* Footer with blockchain info */
+      .blockchain-footer {
+        text-align: center;
+        padding: 30px 0 10px;
+        margin-top: 20px;
+      }
+
+      .blockchain-info {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 0.85em;
+        color: rgba(245, 240, 230, 0.5);
+        letter-spacing: 0.1em;
+      }
+
+      .blockchain-info .protocol {
+        color: var(--gold-accent);
+        font-weight: 500;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .kanji-title {
+          font-size: 2.2em;
+          letter-spacing: 0.15em;
+        }
+
+        .romaji-title {
+          font-size: 1em;
+          letter-spacing: 0.3em;
+        }
+
+        .synopsis {
+          font-size: 1.1em;
+          text-align: left;
+        }
+
+        .frame-container::before,
+        .frame-container::after {
+          display: none;
+        }
+
+        .mon-divider::before,
+        .mon-divider::after {
+          width: 20%;
+        }
+
+        .author-name::before {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="frame-container">
+      <div class="main-content">
+        <!-- Japanese Title -->
+        <header class="japanese-title">
+          <h1 class="kanji-title">沈黙の翼</h1>
+          <p class="romaji-title">As Asas do Silêncio</p>
+        </header>
+
+        <!-- Decorative Divider -->
+        <div class="mon-divider">
+          <span class="mon-symbol">✦</span>
+        </div>
+
+        <!-- NFT Certificate -->
+        <section class="nft-certificate">
+          <p class="certificate-text">
+            Esta <span class="highlight">ficha digital única (NFT)</span> foi cunhada e entregue ao
+            <span class="highlight">primeiro guardião</span> do livro 1 da 1ª edição impressa.
+            <br />
+            Um selo de honra eterno gravado na blockchain.
+          </p>
+        </section>
+
+        <!-- Book Cover -->
+        <div class="book-container">
+          <div class="book-wrapper">
+            <img src="./capalivro.png" alt="As Asas do Silêncio - Capa do Livro" class="book-cover img-responsive" />
+          </div>
+        </div>
+
+        <!-- Volume Badge -->
+        <div class="volume-badge">
+          <span class="volume-text">第一巻 — Volume I — Trilogia</span>
+        </div>
+
+        <!-- Synopsis -->
+        <section class="synopsis-container">
+          <p class="synopsis">
+            <span class="first-letter">沈</span>Em um mundo onde o silêncio corta mais fundo que a lâmina, a honra é
+            posta à prova. Após a morte de seu mestre, uma libélula samurai é traída por aqueles em quem confiava e
+            lançada ao exílio. Ferido, mas não vencido, Takeshi parte em uma jornada por terras esquecidas, guiado por
+            companheiros tão inusitados quanto leais: uma gata ninja, um cão branco mestre zen, dois monges-vaga-lumes,
+            um guaxinim brincalhão e um cervo inventor. As Asas do Silêncio une aventura épica, espiritualidade oriental
+            e uma estética poética singular. Mais do que uma fábula, é um chamado à verdade e ao voo interior de quem
+            ousa escutar o silêncio.
+          </p>
+        </section>
+
+        <!-- Author Seal -->
+        <div class="author-seal">
+          <span class="author-name">Bruno Kaze</span>
+        </div>
+
+        <!-- Keywords -->
+        <div class="keywords-container">
+          <p class="keywords">
+            <span>武士 Samurai</span>
+            <span>禅 Zen</span>
+            <span>冒険 Aventura</span>
+            <span>NFT</span>
+            <span>文学 Literatura</span>
+          </p>
+        </div>
+
+        <!-- Blockchain Footer -->
+        <footer class="blockchain-footer">
+          <p class="blockchain-info">Token <span class="protocol">ERC-1155</span> • Polygon Blockchain</p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- jQuery (required for Bootstrap 3 JavaScript) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Bootstrap 3 JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

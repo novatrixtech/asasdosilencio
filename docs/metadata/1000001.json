@@ -1,0 +1,91 @@
+{
+  "name": "沈黙の翼 - As Asas do Silêncio - Edição #1",
+  "description": "Esta ficha digital única (NFT) foi cunhada e entregue ao primeiro guardião da 1ª edição impressa deste livro. Um selo de honra eterno gravado na blockchain. Em um mundo onde o silêncio corta mais fundo que a lâmina, a honra é posta à prova. Após a morte de seu mestre, uma libélula samurai é traída por aqueles em quem confiava e lançada ao exílio. Ferido, mas não vencido, Takeshi parte em uma jornada por terras esquecidas, guiado por companheiros tão inusitados quanto leais: uma gata ninja, um cão branco mestre zen, dois monges-vaga-lumes, um guaxinim brincalhão e um cervo inventor. As Asas do Silêncio une aventura épica, espiritualidade oriental e uma estética poética singular. Mais do que uma fábula, é um chamado à verdade e ao voo interior de quem ousa escutar o silêncio.",
+  "image": "https://novatrixtech.github.io/asasdosilencio/capalivro.png",
+  "external_url": "https://novatrixtech.github.io/asasdosilencio/1000001.html",
+  "background_color": "1A1A1A",
+  "attributes": [
+    {
+      "trait_type": "Autor",
+      "value": "Bruno Kaze"
+    },
+    {
+      "trait_type": "Título",
+      "value": "As Asas do Silêncio"
+    },
+    {
+      "trait_type": "Título Original",
+      "value": "沈黙の翼"
+    },
+    {
+      "trait_type": "Número da Edição",
+      "value": 1,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Número do Item",
+      "value": 1,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Idioma",
+      "value": "Português"
+    },
+    {
+      "trait_type": "Gênero",
+      "value": "Fábula Samurai"
+    },
+    {
+      "trait_type": "Categoria",
+      "value": "Literatura Zen"
+    },
+    {
+      "trait_type": "Tema",
+      "value": "Aventura Épica"
+    },
+    {
+      "trait_type": "Estilo",
+      "value": "Espiritualidade Oriental"
+    },
+    {
+      "trait_type": "Personagem Principal",
+      "value": "Takeshi (Libélula Samurai)"
+    },
+    {
+      "trait_type": "Série",
+      "value": "Trilogia"
+    },
+    {
+      "trait_type": "Volume",
+      "value": 1,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Raridade",
+      "value": "Primeira Edição"
+    },
+    {
+      "trait_type": "Padrão do Token",
+      "value": "ERC-1155"
+    },
+    {
+      "trait_type": "Tipo de Colecionável",
+      "value": "Certificado de Livro Raro"
+    }
+  ],
+  "properties": {
+    "category": "book",
+    "creators": [
+      {
+        "name": "Bruno Kaze",
+        "role": "Autor e Ilustrador"
+      }
+    ],
+    "files": [
+      {
+        "uri": "https://novatrixtech.github.io/asasdosilencio/capalivro.png",
+        "type": "image/png"
+      }
+    ]
+  }
+}
