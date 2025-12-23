@@ -155,7 +155,8 @@ Os metadados seguem o padrão ERC-1155 e ficam em `docs/metadata/`:
 ## 🔗 Links
 
 - **Frontend**: [novatrixtech.github.io/asasdosilencio](https://novatrixtech.github.io/asasdosilencio/)
-- **Autor**: Bruno Kaze
+- **Autor do Livro**: Bruno Kaze
+- **Desenvolvedor do Projeto**: [Jeff Prestes](https://github.com/jeffprestes)
 
 ---
 
