@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>迷路 - Página Não Encontrada | 沈黙の翼 - As Asas do Silêncio</title>
+    <meta
+      name="description"
+      content="As Asas do Silêncio - A página que você procura não foi encontrada. O caminho do samurai às vezes leva a caminhos desconhecidos."
+    />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+
+    <!-- Bootstrap 3 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+
+    <!-- Google Fonts - Japanese-inspired typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --ink-black: #1a1a1a;
+        --washi-cream: #f5f0e6;
+        --sumi-gray: #3d3d3d;
+        --bamboo-green: #4a5d23;
+        --vermillion: #c73e3a;
+        --gold-accent: #c9a959;
+        --paper-shadow: #d4cfc4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--ink-black);
+        background-image: radial-gradient(ellipse at top, rgba(74, 93, 35, 0.15) 0%, transparent 50%),
+          radial-gradient(ellipse at bottom, rgba(199, 62, 58, 0.1) 0%, transparent 50%);
+        min-height: 100vh;
+        padding: 0;
+        margin: 0;
+        font-family: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+      }
+
+      /* Japanese-style decorative border frame */
+      .frame-container {
+        min-height: 100vh;
+        padding: 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .frame-container::before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border: 1px solid var(--gold-accent);
+        opacity: 0.4;
+        pointer-events: none;
+      }
+
+      .frame-container::after {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+        border: 2px solid var(--gold-accent);
+        opacity: 0.2;
+        pointer-events: none;
+      }
+
+      .error-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+        max-width: 700px;
+      }
+
+      /* Large Kanji error code */
+      .error-kanji {
+        font-family: "Noto Serif JP", serif;
+        font-size: 10em;
+        font-weight: 700;
+        color: var(--vermillion);
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+        margin: 0;
+        line-height: 1;
+        opacity: 0.9;
+      }
+
+      .error-number {
+        font-family: "Cinzel", serif;
+        font-size: 1.5em;
+        font-weight: 400;
+        color: var(--gold-accent);
+        letter-spacing: 0.5em;
+        margin-top: 10px;
+        opacity: 0.8;
+      }
+
+      /* Decorative mon divider */
+      .mon-divider {
+        text-align: center;
+        margin: 30px 0;
+        position: relative;
+        width: 100%;
+      }
+
+      .mon-divider::before,
+      .mon-divider::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 25%;
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--gold-accent), transparent);
+      }
+
+      .mon-divider::before {
+        left: 10%;
+      }
+
+      .mon-divider::after {
+        right: 10%;
+      }
+
+      .mon-symbol {
+        display: inline-block;
+        font-size: 1.5em;
+        color: var(--vermillion);
+        opacity: 0.7;
+      }
+
+      h1 {
+        font-family: "Cinzel", serif;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-size: 1.8em;
+        color: var(--washi-cream);
+        margin: 20px 0;
+      }
+
+      .quote-container {
+        background: linear-gradient(
+          to bottom,
+          rgba(245, 240, 230, 0.03) 0%,
+          rgba(245, 240, 230, 0.08) 50%,
+          rgba(245, 240, 230, 0.03) 100%
+        );
+        border-top: 1px solid rgba(201, 169, 89, 0.3);
+        border-bottom: 1px solid rgba(201, 169, 89, 0.3);
+        padding: 25px 30px;
+        margin: 25px 0;
+        position: relative;
+      }
+
+      .quote-container::before,
+      .quote-container::after {
+        content: "◆";
+        position: absolute;
+        color: var(--gold-accent);
+        opacity: 0.5;
+        font-size: 0.8em;
+      }
+
+      .quote-container::before {
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .quote-container::after {
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .quote {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.3em;
+        font-style: italic;
+        color: var(--washi-cream);
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      .quote-author {
+        font-family: "Cinzel", serif;
+        font-size: 0.9em;
+        color: var(--gold-accent);
+        margin-top: 15px;
+        letter-spacing: 0.15em;
+      }
+
+      .lead {
+        font-family: "Cormorant Garamond", serif;
+        color: rgba(245, 240, 230, 0.7);
+        font-size: 1.2em;
+        line-height: 1.8;
+        max-width: 550px;
+        margin: 20px 0;
+      }
+
+      .btn-home {
+        display: inline-block;
+        background-color: transparent;
+        border: 1px solid var(--vermillion);
+        color: var(--washi-cream);
+        font-family: "Cinzel", serif;
+        font-size: 1em;
+        padding: 14px 40px;
+        margin-top: 30px;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .btn-home::before {
+        content: "帰";
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: "Noto Serif JP", serif;
+        font-size: 1.2em;
+        color: var(--vermillion);
+        opacity: 0.7;
+      }
+
+      .btn-home:hover,
+      .btn-home:focus {
+        background-color: var(--vermillion);
+        border-color: var(--vermillion);
+        color: var(--washi-cream);
+        text-decoration: none;
+      }
+
+      .btn-home:hover::before {
+        color: var(--washi-cream);
+        opacity: 1;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .error-kanji {
+          font-size: 6em;
+        }
+
+        .frame-container::before,
+        .frame-container::after {
+          display: none;
+        }
+
+        .mon-divider::before,
+        .mon-divider::after {
+          width: 15%;
+        }
+
+        .btn-home::before {
+          display: none;
+        }
+
+        .btn-home {
+          padding: 12px 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="frame-container">
+      <div class="error-container">
+        <!-- Large Kanji: 迷 (lost/astray) -->
+        <p class="error-kanji">迷</p>
+        <p class="error-number">4 0 4</p>
+
+        <!-- Decorative Divider -->
+        <div class="mon-divider">
+          <span class="mon-symbol">✦</span>
+        </div>
+
+        <h1>Caminho Perdido</h1>
+
+        <!-- Zen Quote -->
+        <div class="quote-container">
+          <p class="quote">
+            "O samurai que se perde no caminho<br />
+            encontra sabedoria no silêncio."
+          </p>
+          <p class="quote-author">— Provérbio Zen</p>
+        </div>
+
+        <p class="lead">A página que você busca foi levada pelo vento, como folhas de cerejeira no outono.</p>
+
+        <a href="index.html" class="btn btn-home">Retornar ao Início</a>
+      </div>
+    </div>
+
+    <!-- jQuery (required for Bootstrap 3 JavaScript) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Bootstrap 3 JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
